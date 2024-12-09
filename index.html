@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadiah Buat Kamu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #000000, #1a1a1a);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 60px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            animation: popUp 1s ease-out;
+        }
+        h1 {
+            font-size: 2.6em;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px #fcfcfc, 0 0 30px #fffdfd;
+            animation: fadeInDown 1s ease-out;
+        }
+        h2 {
+            font-size: 3em;
+            color: #fffefe;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #fffdfd, 0 0 20px #ffffff;
+            animation: fadeInDown 1s ease-out;
+        }
+        p {
+            font-size: 1.3em;
+            color: #d1d1e0;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6f61, #ff9671, #ffb87a);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(255, 111, 97, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 1;
+            position: relative;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes popUp {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            opacity: 0.8;
+            border-radius: 50%;
+            animation: twinkling 5s infinite ease-in-out;
+        }
+        @keyframes twinkling {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars">
+        <!-- Generate more stars -->
+        <script>
+            const starsContainer = document.querySelector('.stars');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 5 + 's';
+                starsContainer.appendChild(star);
+            }
+        </script>
+    </div>
+    <div class="container">
+        <h2>Sayangku Ilmiyah Agustin</h2>
+        <h2>Aku Ada Hadiah Buat Kamu!</h2>
+        <a href="flower.html" class="button">Lihat Hadiah</a>
+    </div>
+</body>
+</html>
